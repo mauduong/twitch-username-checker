@@ -94,8 +94,8 @@ export default {
 ```
 
 3. In the Worker's **Settings → Variables and Secrets**, add:
-   - `CLIENT_ID` — your Twitch app's Client ID (plain text or **encrypted secret**)
-   - `CLIENT_SECRET` — your Twitch app's Client Secret (**encrypted secret**)
+   - `CLIENT_ID` - your Twitch app's Client ID (plain text or **encrypted secret**)
+   - `CLIENT_SECRET` - your Twitch app's Client Secret (**encrypted secret**)
 
 ### Local Development
 
@@ -131,7 +131,7 @@ Deployment is automated via GitHub Actions on every push to `main`.
    - Go to your repo → **Settings → Secrets and variables → Actions**
    - Add `VITE_WORKER_URL` with your Worker URL as the value
 
-2. Push to `main` — the workflow will build and deploy automatically.
+2. Push to `main` - the workflow will build and deploy automatically.
 
 To deploy manually instead:
 
@@ -151,7 +151,7 @@ Contributions are welcome! Here's how to get started:
 5. Push to your fork: `git push origin feat/your-feature-name`
 6. Open a Pull Request
 
-Please keep PRs focused — one feature or fix per PR makes review much easier.
+Please keep PRs focused - one feature or fix per PR makes review much easier.
 
 ### Ideas for Contributions
 
