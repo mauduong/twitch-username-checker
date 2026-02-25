@@ -133,10 +133,10 @@ pnpm exec gh-pages -d dist
 Contributions are welcome! Here's how to get started:
 
 1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature-name`
+2. Create a feature branch: `git checkout -b feat/your-feature-name`
 3. Make your changes
 4. Commit with a descriptive message: `git commit -m "add: your feature description"`
-5. Push to your fork: `git push origin feature/your-feature-name`
+5. Push to your fork: `git push origin feat/your-feature-name`
 6. Open a Pull Request
 
 Please keep PRs focused — one feature or fix per PR makes review much easier.
