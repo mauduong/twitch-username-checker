@@ -2,6 +2,8 @@
 
 A simple app to check if a Twitch username is available. Built with React, TypeScript, and Vite. Uses a Cloudflare Worker as a lightweight proxy to the official Twitch Helix API.
 
+Visit [Twitch Username Checker](https://mauduong.github.io/twitch-username-checker/) to check if your username has been taken.
+
 ## Features
 
 - Check if a Twitch username is available or taken
@@ -61,13 +63,23 @@ export default {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: `client_id=${env.CLIENT_ID}&client_secret=${env.CLIENT_SECRET}&grant_type=client_credentials`,
     });
-    const { access_token } = await tokenRes.json();
+    const tokenData = await tokenRes.json();
+
+    if (!tokenData.access_token) {
+      return new Response(
+        JSON.stringify({ error: "Token fetch failed", details: tokenData }),
+        {
+          status: 500,
+          headers: corsHeaders,
+        },
+      );
+    }
 
     const userRes = await fetch(
       `https://api.twitch.tv/helix/users?login=${encodeURIComponent(username)}`,
       {
         headers: {
-          Authorization: `Bearer ${access_token}`,
+          Authorization: `Bearer ${tokenData.access_token}`,
           "Client-Id": env.CLIENT_ID,
         },
       },
