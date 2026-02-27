@@ -234,7 +234,8 @@ export default function TwitchChecker() {
         <p style={styles.disclaimer}>
           Uses the official Twitch Helix API.
           <br />
-          Results reflect availability at time of check.
+          Results reflect availability at time of check and an available
+          username may have been freshly decommissioned
           <br />
           History is stored locally on your device (up to 5 entries) and is
           never sent anywhere.
@@ -480,7 +481,7 @@ const styles: Record<string, React.CSSProperties> = {
     padding: 0,
   },
   disclaimer: {
-    color: "#4a4a5e",
+    color: "#6f6f85",
     fontSize: "10px",
     textAlign: "center",
     margin: 0,

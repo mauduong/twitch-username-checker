@@ -1,6 +1,14 @@
 # Twitch Username Checker
 
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![PNPM](https://img.shields.io/badge/pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white)](https://pnpm.io/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.cloudflare.com/)
+
 A simple app to check if a Twitch username is available. Built with React, TypeScript, and Vite. Uses a Cloudflare Worker as a lightweight proxy to the official Twitch Helix API.
+
+Note: Available usernames may have recently been deleted or decommissioned and may actually not be available. We do not store this data anywhere and Twitch does not have a public API to easily know if that is the case.
 
 Visit [Twitch Username Checker](https://mauduong.github.io/twitch-username-checker/) to check if your username has been taken.
 
@@ -99,6 +107,8 @@ export default {
 
 ### Local Development
 
+If you ever wanted to try fork this repository to test locally follow the instructions below:
+
 1. Clone the repository:
 
    ```bash
@@ -122,23 +132,6 @@ export default {
    ```bash
    pnpm run dev
    ```
-
-### Deployment (GitHub Pages)
-
-Deployment is automated via GitHub Actions on every push to `main`.
-
-1. Add your Worker URL as a repository secret:
-   - Go to your repo → **Settings → Secrets and variables → Actions**
-   - Add `VITE_WORKER_URL` with your Worker URL as the value
-
-2. Push to `main` - the workflow will build and deploy automatically.
-
-To deploy manually instead:
-
-```bash
-pnpm run build
-pnpm exec gh-pages -d dist
-```
 
 ## Contributing
 
